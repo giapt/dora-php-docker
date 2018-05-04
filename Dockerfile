@@ -1,5 +1,5 @@
 #+++++++++++++++++++++++++++++++++++++++
-# Dockerfile for webdevops/php:ubuntu-16.04
+# Dockerfile for dora-php-docker
 #    -- automatically generated  --
 #+++++++++++++++++++++++++++++++++++++++
 
@@ -22,5 +22,29 @@ RUN \
     sed -i -e 's/max_execution_time = 30/max_execution_time = 300/g' /etc/php/7.2/apache2/php.ini && \
     sed -i -e 's/upload_max_filesize = 2M/upload_max_filesize = 256M/g' /etc/php/7.2/apache2/php.ini && \
     sed -i -e 's/post_max_size = 8M/post_max_size = 512M/g' /etc/php/7.2/apache2/php.ini && \
-    sed -i -e 's/memory_limit = 128M/memory_limit = 512M/g' /etc/php/7.2/apache2/php.ini
-EXPOSE 9000
+    sed -i -e 's/memory_limit = 128M/memory_limit = 512M/g' /etc/php/7.2/apache2/php.ini && \
+    apt-get install gifsicle && \
+    apt-get install libxml2-dev libxslt1-dev python-dev -y && \
+    apt-get install python-lxml && \
+    curl -sL https://deb.nodesource.com/setup_6.x | -E bash - && \
+    apt-get install nodejs && \
+    npm install svgexport -g && \
+    apt-get install python-pip -y && \
+    apt-get install imagemagick -y && \
+    pip install svg.path && \
+    pip install pydub && \
+    apt-get install mecab libmecab-dev mecab-ipadic -y && \
+    apt-get install aptitude -y && \
+    aptitude install mecab-ipadic-utf8 && \
+    apt-get install python-mecab && \
+    pip install romkan && \
+    add-apt-repository ppa:mc3man/trusty-media -y && \
+    apt-get update && \
+    apt-get dist-upgrade && \
+    apt-get install ffmpeg -y && \
+    apt-get install libmysqlclient-dev -y && \
+    pip install mysql-python && \
+    apt-get install vim -y && \
+    pip install jaconv
+
+
