@@ -1,34 +1,13 @@
 #+++++++++++++++++++++++++++++++++++++++
-# Dockerfile for dora-php-docker 1.1
+# Dockerfile for dora-php-docker 1.2
 #    -- automatically generated  --
 #+++++++++++++++++++++++++++++++++++++++
 
-FROM giapt/dora-php-docker:1.0
+FROM giapt/dora-php-docker:1.1
 
 RUN \
-    sed -i 's|http://archive|http://us.archive|g' /etc/apt/sources.list && \
-    apt-get update && \
-    apt-get install gifsicle && \
-    apt-get install libxml2-dev libxslt1-dev python-dev -y && \
-    apt-get install python-lxml -y && \
-    apt-get install build-essential libssl-dev -y && \
-    curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
-    apt-get update && \
-    apt-get install nodejs -y && \
-    npm install svgexport -g && \
-    apt-get install python-pip -y && \
-    apt-get install imagemagick -y && \
-    pip install svg.path && \
-    pip install pydub && \
-    apt-get install mecab libmecab-dev mecab-ipadic -y && \
-    apt-get install aptitude -y && \
-    aptitude install mecab-ipadic-utf8 && \
-    apt-get install python-mecab -y && \
-    pip install romkan && \
-    apt-get install ffmpeg -y && \
-    apt-get install libmysqlclient-dev -y && \
-    pip install mysql-python && \
+    apt-get install git -y && \
     apt-get install vim -y && \
-    pip install jaconv
+    curl -sL https://gist.githubusercontent.com/giapt/d53c5c1f7d744d4f8b80c79c5b55bfa2/raw/727eb5409c0d686a0f69aea75ad29847652a2d0d/php7_pthreads.sh | bash -
 
 
