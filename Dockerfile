@@ -29,6 +29,7 @@ RUN \
     apt-get install libmysqlclient-dev -y && \
     pip install mysql-python && \
     apt-get install vim -y && \
-    pip install jaconv
-
+    pip install jaconv && \
+    pip install requests && \
+    pip install bs4
 
