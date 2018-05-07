@@ -3,7 +3,7 @@
 Sample yml file :
 ```
 lamp:  
-  image: dora-php-docker:latest
+  image: giaptd/dora-php-docker:1.2
   ports:
   - "8080:80"
   environment:
@@ -11,9 +11,9 @@ lamp:
   volumes:
   - "/var/www:/var/www"
   - "/root:/root"
-  container_name: dora
+  container_name: dora7.2
   external_links: 
   - "mysql:mysql"
   - "mongodb:mongodb"
 ```
-command : docker-composer -f file.yml up
+command : docker-composer -f file.yml up -d
