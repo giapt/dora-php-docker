@@ -1,5 +1,9 @@
 # Docker ubuntu 16.04 with Apache2 and PHP 7.2
 
+Version 1.0 : ubuntu 16.04 with Apache2 and PHP 7.2, composer
+Version 1.1 : ubuntu 16.04, Apache2, PHP 7.2, composer, with extend library for dora
+Version 1.2 : ubuntu 16.04, Apache2, PHP 7.2, composer,extend library, pthreads
+
 Sample yml file :
 ```
 lamp:  
