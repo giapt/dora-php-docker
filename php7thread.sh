@@ -1,6 +1,7 @@
 #!/bin/bash
 
 apt-get update
+apt install php7.0-dev -y
 apt install -y libzip-dev bison autoconf build-essential pkg-config git-core \
 libltdl-dev libbz2-dev libxml2-dev libxslt1-dev libssl-dev libicu-dev \
 libpspell-dev libenchant-dev libmcrypt-dev libpng-dev libjpeg8-dev \
@@ -16,16 +17,16 @@ cd php-src-php-7.2.4
    --with-fpm-user=www-data --with-fpm-group=www-data"
 make clean
 make && make install
-chmod o+x /etc/php7/bin/phpize
-chmod o+x /etc/php7/bin/php-config
+chmod o+x /usr/bin/phpize
+chmod o+x /usr/bin/php-config
 git clone https://github.com/krakjoe/pthreads.git
 cd pthreads
-/etc/php7/bin/phpize
+/usr/bin/phpize
 ./configure \
 --prefix='/etc/php7' \
 --with-libdir='/lib/x86_64-linux-gnu' \
 --enable-pthreads=shared \
---with-php-config='/etc/php7/bin/php-config'
+--with-php-config='/usr/bin/php-config'
 make && make install
 cd $HOME/php-src-php-7.2.4
 mkdir -p /etc/php7/cli/
