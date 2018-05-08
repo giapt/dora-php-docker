@@ -22,6 +22,5 @@ RUN \
     sed -i -e 's/max_execution_time = 30/max_execution_time = 300/g' /etc/php/7.2/apache2/php.ini && \
     sed -i -e 's/upload_max_filesize = 2M/upload_max_filesize = 256M/g' /etc/php/7.2/apache2/php.ini && \
     sed -i -e 's/post_max_size = 8M/post_max_size = 512M/g' /etc/php/7.2/apache2/php.ini && \
-    sed -i -e 's/memory_limit = 128M/memory_limit = 512M/g' /etc/php/7.2/apache2/php.ini && \
-    curl -sL https://gist.githubusercontent.com/giapt/ebbee3a81f32dc497e929c203b32d638/raw/eaeee090f534108409a43189713fc8b26b37d322/install_composer.sh | bash -
+    sed -i -e 's/memory_limit = 128M/memory_limit = 512M/g' /etc/php/7.2/apache2/php.ini
 
